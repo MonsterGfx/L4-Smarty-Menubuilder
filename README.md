@@ -91,4 +91,34 @@ I use it in a default view composer to ensure that the menus are built automatic
     	// add other stuff here...
     });
 
-In your view (I use Smarty, although it may work with other systems), the value of the `$menu` variable is an HTML fragment styled for Twitter Bootstrap that can be inserted in the appropriate place in your page.
+The `build()` method returns an array that looks something like this:
+
+    Array
+    (
+        [Administration] => Array
+            (
+                [icon] => icon-star
+                [sort] => 5
+                [items] => Array
+                    (
+                        [0] => Array
+                            (
+                                [text] => List Users
+                                [icon] => icon-user
+                                [route] => list-users
+                                [permission] => user.list
+                                [sort] => 1
+                            )
+                        [1] => Array
+                            (
+                                [text] => Add New User
+                                [icon] => icon-user
+                                [route] => create-user
+                                [permission] => user.edit
+                                [sort] => 1
+                            )
+                    )
+            )
+    )
+
+This menu can be passed to a view to be rendered as you see fit.
