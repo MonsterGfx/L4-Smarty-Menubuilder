@@ -10,7 +10,7 @@ In developing a number of projects using Laravel4, Sentry2, and Smarty, I needed
 
 So this time around, I was looking for a way to define my menus in code and generate menus automatically. What I came up with was this Menubuilder, which I am now rebuilding into a package which I will use in multiple projects.
 
-**Note that this project is tailored _very_ closely to my requirements and may not be suitable outside of my context.**
+**Note that this project is tailored _very_ closely to my requirements and may not be suitable for use outside of my environment.**
 
 Pull requests are welcome. Please note that I am using git flow for my workflow. Don't know what that is? Check out [http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/](http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/).
 
