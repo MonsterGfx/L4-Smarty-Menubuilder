@@ -20,23 +20,12 @@ class Menubuilder {
 	}
 
 	/**
-	 * Build the menu array HTML
-	 *
-	 * @return string
-	 * The HTML fragment describing the HTML
-	 */
-	public function build()
-	{
-		return $this->buildMenuArray();
-	}
-
-	/**
 	 * Build the menu array structure based on the menus configuration file
 	 * and the currently logged in user.
 	 *
 	 * @return array
 	 */
-	protected function buildMenuArray()
+	public function build()
 	{
 
 		// references to objects that will be needed
