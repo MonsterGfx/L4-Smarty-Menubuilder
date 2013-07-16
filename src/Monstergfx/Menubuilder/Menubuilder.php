@@ -32,9 +32,6 @@ class Menubuilder {
 		$sentry = $this->app['sentry'];
 		$config = $this->app['config'];
 
-		// and one more that's useful for development
-		$kint = $this->app['kint'];
-
 		// get the current user
 		$user = $sentry->getUser();
 		// if nobody's logged in, return an empty array
