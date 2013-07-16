@@ -1,6 +1,7 @@
 <?php namespace Monstergfx\Menubuilder;
 
 use Illuminate\Support\ServiceProvider;
+use Monstergfx\Menubuilder\Commands;
 
 class MenubuilderServiceProvider extends ServiceProvider {
 
@@ -32,6 +33,13 @@ class MenubuilderServiceProvider extends ServiceProvider {
 		{
 			return new Menubuilder;
 		});
+
+		$this->app['commands.menubuilder.make'] = $this->app->share(function($app)
+		{
+			return new Commands\MenubuilderCommand();
+		});
+		$this->commands('commands.menubuilder.make');
+
 	}
 
 	/**
