@@ -31,7 +31,7 @@ class MenubuilderServiceProvider extends ServiceProvider {
 	{
 		$this->app['menubuilder'] = $this->app->share(function($app)
 		{
-			return new Menubuilder;
+			return new Menubuilder($app);
 		});
 
 		$this->app['commands.menubuilder.make'] = $this->app->share(function($app)
