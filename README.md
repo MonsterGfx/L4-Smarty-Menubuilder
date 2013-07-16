@@ -25,6 +25,28 @@ Or have a look at one of these screen casts:
 Usage
 -----
 
+### Installing
+
+Add the appropriate line to your `composer.json` file. This package can be found [on packagist.org](https://packagist.org/packages/monstergfx/menubuilder).
+
+Once you've run `composer.phar update` and downloaded the package, add it to your `app/config/app.php` file in two places:
+
+* in the `providers` array:
+
+
+    'providers' => array(
+        // a whole bunch of other providers...
+        'Monstergfx\Menubuilder\MenubuilderServiceProvider',
+    ),
+
+
+* in the `aliases` array:
+
+    'aliases' => array(
+        // a whole bunch of other aliases...
+        'Menubuilder' => 'Monstergfx\Menubuilder\Facades\Menubuilder',
+    ),
+
 ### Defining your menus in code
 
 Somewhere in your code (it doesn't matter where), define a `menu` by inserting a comment like this:
