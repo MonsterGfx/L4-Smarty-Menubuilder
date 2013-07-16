@@ -12,13 +12,26 @@ class MenubuilderServiceProvider extends ServiceProvider {
 	protected $defer = false;
 
 	/**
+	 * Bootstrap the application events.
+	 *
+	 * @return void
+	 */
+	public function boot()
+	{
+		$this->package('monstergfx/menubuilder');
+	}
+
+	/**
 	 * Register the service provider.
 	 *
 	 * @return void
 	 */
 	public function register()
 	{
-		//
+		$this->app['menubuilder'] = $this->app->share(function($app)
+		{
+			return new Menubuilder;
+		});
 	}
 
 	/**
