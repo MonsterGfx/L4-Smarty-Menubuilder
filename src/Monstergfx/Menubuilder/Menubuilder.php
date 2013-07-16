@@ -65,7 +65,6 @@ class Menubuilder {
 				unset($menus[$m]);
 		}
 
-$kint->dump($menus); die;
 		// return the result
 		return $menus;
 	}
