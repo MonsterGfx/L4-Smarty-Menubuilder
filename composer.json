@@ -1,7 +1,7 @@
 {
     "name": "monstergfx/menubuilder",
     "description": "A Menu Builder and renderer for Laravel, Twitter Bootstrap, and Dark/SmartyView",
-    "license": "BSD-4-Clause",
+    "license": "BSD-3-Clause",
     "authors": [
         {
             "name": "Dave Thomas",
