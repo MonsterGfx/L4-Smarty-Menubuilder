@@ -48,7 +48,7 @@ class MenubuilderCommand extends Command {
 		// perform an 'exec' to get the menu specs
 		$raw_lines = array();
 
-		$command = 'find ./app \( -name storage -prune \) -o -name "*.php" -exec grep -PHn "^\s*(\*|//)\s+@menu\s+" {} 2>/dev/null \;';
+		$command = 'find ./app ./workbench \( -name storage -prune \) -o -name "*.php" -exec grep -PHn "^\s*(\*|//)\s+@menu\s+" {} 2>/dev/null \;';
 		exec($command, $raw_lines);
 
 		// lines will be of the form
@@ -100,7 +100,7 @@ class MenubuilderCommand extends Command {
 
 		// perform an 'exec' to get the menuitem specifications
 		$raw_lines = array();
-		$command = 'find ./app \( -name storage -prune \) -o -name "*.php" -exec grep -PHn "^\s*(\*|//)\s+@menuitem " {} 2>/dev/null \;';
+		$command = 'find ./app ./workbench \( -name storage -prune \) -o -name "*.php" -exec grep -PHn "^\s*(\*|//)\s+@menuitem " {} 2>/dev/null \;';
 		exec($command, $raw_lines);
 
 
