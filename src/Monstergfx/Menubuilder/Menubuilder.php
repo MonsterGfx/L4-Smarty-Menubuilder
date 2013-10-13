@@ -40,6 +40,9 @@ class Menubuilder {
 
 		// get the menu structure from the config
 		$menus = $config->get('menus.menus');
+		
+	        $category_active = false; 
+	        $category_marked = false;		
 
 		// step through the menus & items
 		foreach(array_keys($menus) as $m)
@@ -49,9 +52,22 @@ class Menubuilder {
 			foreach($items as $i)
 			{
 				if($user->hasAccess('admin') || $user->hasAccess($i['permission']))
+				{
+					// Check of current URL is this one, mark it active.                    
+					if ( \Illuminate\Support\Facades\Route::currentRouteName() === $i['route']) 
+					{
+						$category_active = true; // Mark category as active
+						$i['active'] = true; // Mark item as active
+					}					
 					$permitted_items[] = $i;
+				}
 			}
 			$menus[$m]['items'] = $permitted_items;
+			// Mark category where the item resides in active
+			if ($category_active && ! $category_marked) 
+			{
+				$menus[$m]['active'] = $category_marked = true;
+			}			
 		}
 
 		// step through the top level menus
