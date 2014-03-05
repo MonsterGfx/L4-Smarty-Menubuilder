@@ -95,7 +95,7 @@ class MenubuilderCommand extends Command {
 		}
 
 		// sort the menus
-		uksort($menus,function($a, $b){ return $a['sort']<$b['sort']; });
+		uasort($menus,function($a, $b){ return $a['sort']<$b['sort'] ? -1 : 1; });
 
 
 		// perform an 'exec' to get the menuitem specifications
